@@ -50,6 +50,7 @@ namespace WpfApp1
             GenerateCode();
             StartGame();
             this.KeyDown += toggleDebug;
+            UpdateCurrentPlayerDisplay();
         }
         private void codeCheck_Click(object sender, RoutedEventArgs e)
         {
@@ -343,6 +344,32 @@ namespace WpfApp1
             {
                 string highScoreEntry = $"{player.name} - {attempt} pogingen - {player.highscore}";
                 HighScoreList.Items.Add(highScoreEntry);
+            }
+        }
+        private void UpdateCurrentPlayerDisplay()
+        {
+            string currentPlayerName = playerList[attempt % playerList.Count].name;
+            currentPlayerLabel.Content = $"Huidige speler: {currentPlayerName}";
+        }
+
+        private void OfferHint()
+        {
+            MessageBoxResult result = MessageBox.Show("Wil je een hint kopen? Een juiste kleur kost 15 strafpunten, een juiste kleur op de juiste plaats kost 25 strafpunten.", "Hint kopen", MessageBoxButton.YesNo);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                string hintChoice = Interaction.InputBox("Kies je hint:\n1 - Juiste kleur\n2 - Juiste kleur op juiste plaats", "Kies Hint");
+
+                if (hintChoice == "1")
+                {
+                    penaltyPoints += 15;
+                    MessageBox.Show("Je hebt een hint gekocht: Juiste kleur.");
+                }
+                else if (hintChoice == "2")
+                {
+                    penaltyPoints += 25;
+                    MessageBox.Show("Je hebt een hint gekocht: Juiste kleur op juiste plaats.");
+                }
             }
         }
 

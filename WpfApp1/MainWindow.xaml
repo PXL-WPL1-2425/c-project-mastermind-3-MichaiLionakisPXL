@@ -74,7 +74,7 @@
         <Label x:Name="penaltyLabel" Content="StrafPunten: " HorizontalAlignment="Right" Margin="0,214,496,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Label x:Name="guessLabel" Content="Poging: 0/10" HorizontalAlignment="Left" Margin="221,238,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Label Content="History" HorizontalAlignment="Left" Margin="554,13,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" FontWeight="Bold"/>
-        <Label Content="" HorizontalAlignment="Left" Margin="198,48,0,0" VerticalAlignment="Top" Height="40" Width="129" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="currentPlayerLabel" Content="" HorizontalAlignment="Left" Margin="198,48,0,0" VerticalAlignment="Top" Height="40" Width="129" RenderTransformOrigin="0.5,0.5">
         </Label>
 
     </Grid>
