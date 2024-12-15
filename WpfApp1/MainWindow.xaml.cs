@@ -372,21 +372,6 @@ namespace WpfApp1
                 }
             }
         }
-        private void UpdateTooltips(Label colorLabel, bool correctPosition, bool correctColor)
-        {
-            if (correctPosition)
-            {
-                colorLabel.ToolTip = "Juiste kleur, juiste positie";
-            }
-            else if (correctColor)
-            {
-                colorLabel.ToolTip = "Juiste kleur, foute positie";
-            }
-            else
-            {
-                colorLabel.ToolTip = "Foute kleur";
-            }
-        }
 
 
     }
