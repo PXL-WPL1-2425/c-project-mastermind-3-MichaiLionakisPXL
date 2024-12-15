@@ -1,0 +1,83 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MasterMind" Height="450" Width="800"
+        Background="Gray"
+        >
+
+    <Grid>
+        <Menu x:Name="Hoofdmenu" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0">
+            <MenuItem Header="Bestand">
+                <MenuItem x:Name="NewGame" Header="Nieuw spel" Click="NewGame_Click" />
+                <MenuItem x:Name="HighScores" Header="Highscores">
+                    <ListBox x:Name="HighScoreList" Width="250" Height="150" />
+                </MenuItem>
+                <MenuItem x:Name="Close" Header="Afsluiten" Click="Close_Click" />
+            </MenuItem>
+            <MenuItem Header="instellingen">
+                <MenuItem x:Name="AttemptAmount" Header="Aantal pogingen" Click="AttemptAmount_Click"/>
+            </MenuItem>
+
+        </Menu>
+
+        <Label x:Name="colorLabel1" Content="" HorizontalAlignment="Left" Margin="20,53,0,0" VerticalAlignment="Top" Height="70" Width="100" IsEnabled="False" />
+
+        <Label x:Name="colorLabel2" Content="" HorizontalAlignment="Left" Margin="20,155,0,0" VerticalAlignment="Top" Height="70" Width="100" IsEnabled="False"/>
+        <Label x:Name="colorLabel3" Content="" HorizontalAlignment="Left" Margin="20,257,0,0" VerticalAlignment="Top" Height="70" Width="100" IsEnabled="False"/>
+        <Label x:Name="colorLabel4" Content="" HorizontalAlignment="Left" Margin="20,358,0,0" VerticalAlignment="Top" Height="70" Width="100" IsEnabled="False"/>
+        <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Margin="10,26,0,0" VerticalAlignment="Top" Width="120" Text="Kleur 1" SelectionChanged="comboBox_SelectionChanged" BorderBrush="Black">
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#FFF0F0F0"/>
+                    <GradientStop Color="#FF696767" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+            <ComboBoxItem Content="rood"/>
+            <ComboBoxItem Content="groen"/>
+            <ComboBoxItem Content="geel"/>
+            <ComboBoxItem Content="blauw"/>
+            <ComboBoxItem Content="oranje"/>
+            <ComboBoxItem Content="wit"/>
+        </ComboBox>
+        <ComboBox x:Name="comboBox2" HorizontalAlignment="Left" Margin="10,128,0,0" VerticalAlignment="Top" Width="120" Text="Kleur 1" SelectionChanged="comboBox_SelectionChanged">
+            <ComboBoxItem Content="rood"/>
+            <ComboBoxItem Content="groen"/>
+            <ComboBoxItem Content="geel"/>
+            <ComboBoxItem Content="blauw"/>
+            <ComboBoxItem Content="oranje"/>
+            <ComboBoxItem Content="wit"/>
+        </ComboBox>
+        <ComboBox x:Name="comboBox3" HorizontalAlignment="Left" Margin="10,229,0,0" VerticalAlignment="Top" Width="120" Text="Kleur 1" SelectionChanged="comboBox_SelectionChanged">
+            <ComboBoxItem Content="rood"/>
+            <ComboBoxItem Content="groen"/>
+            <ComboBoxItem Content="geel"/>
+            <ComboBoxItem Content="blauw"/>
+            <ComboBoxItem Content="oranje"/>
+            <ComboBoxItem Content="wit"/>
+        </ComboBox>
+        <ComboBox x:Name="comboBox4" HorizontalAlignment="Left" Margin="10,332,0,0" VerticalAlignment="Top" Width="120" Text="Kleur 1" SelectionChanged="comboBox_SelectionChanged">
+            <ComboBoxItem Content="rood"/>
+            <ComboBoxItem Content="groen"/>
+            <ComboBoxItem Content="geel"/>
+            <ComboBoxItem Content="blauw"/>
+            <ComboBoxItem Content="oranje"/>
+            <ComboBoxItem Content="wit"/>
+        </ComboBox>
+        <Button x:Name="codeCheck" Content="Check code" HorizontalAlignment="Left" Height="49" Margin="198,158,0,0" VerticalAlignment="Top" Width="128" Click="codeCheck_Click" FontWeight="Bold" FontSize="16" Background="#FF696767"/>
+        <TextBlock x:Name="codeBlock" HorizontalAlignment="Left" Margin="20,290,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="200" Grid.Column="2" IsEnabled="False" Visibility="Collapsed" TextAlignment="Center"/>
+        <TextBlock x:Name="timerBlock" HorizontalAlignment="Left" Margin="198,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" TextAlignment="Center" Text="0"/>
+        <ListBox x:Name="historyList"  Margin="390,52,10,10" BorderBrush="Black" Background="#FF696767" Width="400"/>
+        <Label x:Name="penaltyLabel" Content="StrafPunten: " HorizontalAlignment="Right" Margin="0,214,496,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="guessLabel" Content="Poging: 0/10" HorizontalAlignment="Left" Margin="221,238,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="History" HorizontalAlignment="Left" Margin="554,13,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" FontWeight="Bold"/>
+        <Label Content="" HorizontalAlignment="Left" Margin="198,48,0,0" VerticalAlignment="Top" Height="40" Width="129" RenderTransformOrigin="0.5,0.5">
+        </Label>
+
+    </Grid>
+
+</Window>
+
