@@ -200,10 +200,12 @@ namespace WpfApp1
         {
             if (attempt > 9)
             {
-                MessageBoxResult result = MessageBox.Show($"you failed the correct code was {combinedString}", "FAILED");
-
+                string currentPlayer = playerList[attempt % playerList.Count].name;
+                string nextPlayer = playerList[(attempt + 1) % playerList.Count].name;
+                MessageBoxResult result = MessageBox.Show($"{currentPlayer}, je hebt gefaald. De juiste code was {combinedString}. Volgende speler is {nextPlayer}.", "FAILED");
             }
         }
+
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show($"Weet je zeker dat je de applicatie wilt afsluiten?je zit op poging {attempt}/10",
